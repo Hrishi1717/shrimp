@@ -9,7 +9,8 @@ import {
   QrCode,
   LogOut,
   Menu,
-  X
+  X,
+  Users
 } from 'lucide-react';
 import { authAPI } from '../services/api';
 import { Button } from './ui/button';
