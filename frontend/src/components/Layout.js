@@ -37,6 +37,7 @@ function Layout({ children, user, activePage }) {
     { id: 'dispatch', label: 'Dispatch', icon: Truck, path: '/dispatch', roles: ['staff', 'admin'] },
     { id: 'scanner', label: 'QR Scanner', icon: QrCode, path: '/scanner', roles: ['staff', 'admin'] },
     { id: 'admin', label: 'Dashboard', icon: BarChart3, path: '/admin', roles: ['admin'] },
+    { id: 'users', label: 'User Management', icon: Users, path: '/users', roles: ['admin'] },
   ];
 
   const filteredNavItems = navItems.filter(item => item.roles.includes(user?.role));
