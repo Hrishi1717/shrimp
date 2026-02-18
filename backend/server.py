@@ -416,8 +416,8 @@ async def link_farmer_to_user(
     data: dict,
     user: dict = Depends(get_current_user)
 ):
-    if user["role"] != "admin":
-        raise HTTPException(status_code=403, detail="Admin access required")
+    if user["role"] not in ["owner", "admin"]:
+        raise HTTPException(status_code=403, detail="Owner/Admin access required")
     
     user_id = data.get("user_id")
     farmer_id = data.get("farmer_id")
