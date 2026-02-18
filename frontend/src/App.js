@@ -34,49 +34,49 @@ function AppRouter() {
       } />
       
       <Route path="/staff" element={
-        <ProtectedRoute allowedRoles={['staff', 'admin']}>
+        <ProtectedRoute allowedRoles={['staff', 'admin', 'owner']}>
           <StaffDashboard />
         </ProtectedRoute>
       } />
       
       <Route path="/processing" element={
-        <ProtectedRoute allowedRoles={['staff', 'admin']}>
+        <ProtectedRoute allowedRoles={['staff', 'admin', 'owner']}>
           <ProcessingDashboard />
         </ProtectedRoute>
       } />
       
       <Route path="/inventory" element={
-        <ProtectedRoute allowedRoles={['staff', 'admin']}>
+        <ProtectedRoute allowedRoles={['staff', 'admin', 'owner']}>
           <InventoryDashboard />
         </ProtectedRoute>
       } />
       
       <Route path="/dispatch" element={
-        <ProtectedRoute allowedRoles={['staff', 'admin']}>
+        <ProtectedRoute allowedRoles={['staff', 'admin', 'owner']}>
           <DispatchDashboard />
         </ProtectedRoute>
       } />
       
       <Route path="/admin" element={
-        <ProtectedRoute allowedRoles={['admin']}>
+        <ProtectedRoute allowedRoles={['admin', 'owner']}>
           <AdminDashboard />
         </ProtectedRoute>
       } />
       
       <Route path="/users" element={
-        <ProtectedRoute allowedRoles={['admin']}>
+        <ProtectedRoute allowedRoles={['admin', 'owner']}>
           <UserManagement />
         </ProtectedRoute>
       } />
       
       <Route path="/batch/:batchId" element={
-        <ProtectedRoute allowedRoles={['farmer', 'staff', 'admin']}>
+        <ProtectedRoute allowedRoles={['farmer', 'staff', 'admin', 'owner']}>
           <BatchDetails />
         </ProtectedRoute>
       } />
       
       <Route path="/scanner" element={
-        <ProtectedRoute allowedRoles={['staff', 'admin']}>
+        <ProtectedRoute allowedRoles={['staff', 'admin', 'owner']}>
           <QRScanner />
         </ProtectedRoute>
       } />
