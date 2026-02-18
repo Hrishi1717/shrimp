@@ -8,6 +8,7 @@ import ProcessingDashboard from './pages/ProcessingDashboard';
 import InventoryDashboard from './pages/InventoryDashboard';
 import DispatchDashboard from './pages/DispatchDashboard';
 import AdminDashboard from './pages/AdminDashboard';
+import UserManagement from './pages/UserManagement';
 import BatchDetails from './pages/BatchDetails';
 import QRScanner from './pages/QRScanner';
 import ProtectedRoute from './components/ProtectedRoute';
