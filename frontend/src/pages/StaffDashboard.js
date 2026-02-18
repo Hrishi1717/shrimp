@@ -192,15 +192,16 @@ function StaffDashboard({ user }) {
                       onValueChange={(value) =>
                         setFormData({ ...formData, size_grade: value })
                       }
+                      required
                     >
                       <SelectTrigger data-testid="size-grade-select" className="mt-1">
                         <SelectValue placeholder="Select size grade" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="Small">Small (20-30 count/kg)</SelectItem>
-                        <SelectItem value="Medium">Medium (15-20 count/kg)</SelectItem>
-                        <SelectItem value="Large">Large (10-15 count/kg)</SelectItem>
-                        <SelectItem value="Jumbo">Jumbo (5-10 count/kg)</SelectItem>
+                        <SelectItem value="Small" data-testid="size-small">Small (20-30 count/kg)</SelectItem>
+                        <SelectItem value="Medium" data-testid="size-medium">Medium (15-20 count/kg)</SelectItem>
+                        <SelectItem value="Large" data-testid="size-large">Large (10-15 count/kg)</SelectItem>
+                        <SelectItem value="Jumbo" data-testid="size-jumbo">Jumbo (5-10 count/kg)</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
