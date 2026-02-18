@@ -12,7 +12,7 @@ from datetime import datetime, timedelta, timezone
 from typing import Dict, Any, Optional
 
 class PrawnProcessingAPITester:
-    def __init__(self, base_url="https://shrimp-process-flow.preview.emergentagent.com"):
+    def __init__(self, base_url="https://shrimp-intake.preview.emergentagent.com"):
         self.base_url = base_url
         self.api_url = f"{base_url}/api"
         self.session_token = None

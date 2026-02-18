@@ -15,7 +15,7 @@
 
 ### Accessing the App
 
-**Web App:** https://shrimp-process-flow.preview.emergentagent.com
+**Web App:** https://shrimp-intake.preview.emergentagent.com
 
 **Mobile App (PWA):**
 - Android: Chrome → Menu → "Add to Home screen"

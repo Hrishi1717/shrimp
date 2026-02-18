@@ -8,7 +8,7 @@
 ## 📱 How to Use the App
 
 ### 1. Login as Admin
-1. Go to: https://shrimp-process-flow.preview.emergentagent.com
+1. Go to: https://shrimp-intake.preview.emergentagent.com
 2. Click "Continue with Google"
 3. **Logout and login again** to see all admin features
 

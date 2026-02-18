@@ -7,7 +7,7 @@
 
 ## 🚀 Quick Links
 
-- **🌐 Live App:** https://shrimp-process-flow.preview.emergentagent.com
+- **🌐 Live App:** https://shrimp-intake.preview.emergentagent.com
 - **📖 User Guide:** [QUICK_START_GUIDE.md](QUICK_START_GUIDE.md)
 - **🛠️ Technical Docs:** [TECHNICAL_DOCUMENTATION.md](TECHNICAL_DOCUMENTATION.md)
 - **📱 Mobile App:** [MOBILE_APP_GUIDE.md](MOBILE_APP_GUIDE.md)
@@ -81,7 +81,7 @@
 ## 🎯 Quick Start
 
 ### 1. Access the App
-Go to: https://shrimp-process-flow.preview.emergentagent.com
+Go to: https://shrimp-intake.preview.emergentagent.com
 
 ### 2. Login
 Click "Continue with Google"
@@ -271,7 +271,7 @@ A: Created automatically when batch is made. Click QR icon to reprint.
 
 **Current:** Emergent.sh (Kubernetes)
 
-**URL:** https://shrimp-process-flow.preview.emergentagent.com
+**URL:** https://shrimp-intake.preview.emergentagent.com
 
 **Services:**
 - Frontend: React (Port 3000)
@@ -342,7 +342,7 @@ All rights reserved.
 
 ## 🎉 Get Started Now!
 
-1. **Visit:** https://shrimp-process-flow.preview.emergentagent.com
+1. **Visit:** https://shrimp-intake.preview.emergentagent.com
 2. **Login:** Click "Continue with Google"
 3. **Explore:** Based on your role
 4. **Install:** Add to home screen (mobile)

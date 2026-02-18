@@ -267,7 +267,7 @@ test_database/
 
 ### Base URL
 ```
-Production: https://shrimp-process-flow.preview.emergentagent.com/api
+Production: https://shrimp-intake.preview.emergentagent.com/api
 Local: http://localhost:8001/api
 ```
 
@@ -839,14 +839,14 @@ function ProtectedRoute({ children, allowedRoles = [] }) {
 
 **Frontend (.env):**
 ```bash
-REACT_APP_BACKEND_URL=https://shrimp-process-flow.preview.emergentagent.com
+REACT_APP_BACKEND_URL=https://shrimp-intake.preview.emergentagent.com
 ```
 
 **Backend (.env):**
 ```bash
 MONGO_URL=mongodb://localhost:27017/
 DB_NAME=test_database
-CORS_ORIGINS=https://shrimp-process-flow.preview.emergentagent.com
+CORS_ORIGINS=https://shrimp-intake.preview.emergentagent.com
 ```
 
 ### Supervisor Configuration

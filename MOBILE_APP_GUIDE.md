@@ -13,7 +13,7 @@
 ### 📲 How to Install (Android):
 
 1. **Open Chrome** on Android phone
-2. Go to: `https://shrimp-process-flow.preview.emergentagent.com`
+2. Go to: `https://shrimp-intake.preview.emergentagent.com`
 3. Tap the **3-dot menu** (⋮) in Chrome
 4. Tap **"Add to Home screen"** or **"Install app"**
 5. Tap **"Add"** or **"Install"**
@@ -22,7 +22,7 @@
 ### 📲 How to Install (iPhone):
 
 1. **Open Safari** on iPhone (must use Safari, not Chrome)
-2. Go to: `https://shrimp-process-flow.preview.emergentagent.com`
+2. Go to: `https://shrimp-intake.preview.emergentagent.com`
 3. Tap the **Share button** (□↑) at the bottom
 4. Scroll and tap **"Add to Home Screen"**
 5. Tap **"Add"**
@@ -151,7 +151,7 @@ npx cap open ios
 
 **On your phone:**
 1. Open browser (Chrome on Android, Safari on iPhone)
-2. Go to: `https://shrimp-process-flow.preview.emergentagent.com`
+2. Go to: `https://shrimp-intake.preview.emergentagent.com`
 3. Install it to home screen
 4. Open from home screen - feels like a native app!
 
