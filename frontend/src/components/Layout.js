@@ -81,11 +81,12 @@ function Layout({ children, user, activePage }) {
                     navigate(item.path);
                     setSidebarOpen(false);
                   }}
-                  className={`w-full flex items-center px-4 py-3 mb-2 rounded-lg transition-colors duration-150 ${
+                  className={`w-full flex items-center px-4 py-3 mb-2 rounded-lg transition-colors duration-150 relative z-10 ${
                     isActive
                       ? 'bg-orange-500 text-white'
                       : 'text-slate-300 hover:bg-slate-800'
                   }`}
+                  style={{ pointerEvents: 'auto' }}
                 >
                   <Icon size={20} className="mr-3" />
                   <span className="font-medium">{item.label}</span>
