@@ -323,6 +323,70 @@ async def logout(response: Response, user: dict = Depends(get_current_user)):
     
     return {"message": "Logged out successfully"}
 
+# ============ User Management Routes ============
+
+@api_router.get("/users", response_model=List[User])
+async def get_users(user: dict = Depends(get_current_user)):
+    if user["role"] != "admin":
+        raise HTTPException(status_code=403, detail="Admin access required")
+    
+    users = await db.users.find({}, {"_id": 0}).to_list(1000)
+    
+    for u in users:
+        if isinstance(u.get('created_at'), str):
+            u['created_at'] = datetime.fromisoformat(u['created_at'])
+    
+    return users
+
+@api_router.put("/users/{user_id}/role")
+async def update_user_role(user_id: str, role: str, user: dict = Depends(get_current_user)):
+    if user["role"] != "admin":
+        raise HTTPException(status_code=403, detail="Admin access required")
+    
+    if role not in ["admin", "staff", "farmer"]:
+        raise HTTPException(status_code=400, detail="Invalid role")
+    
+    result = await db.users.update_one(
+        {"user_id": user_id},
+        {"$set": {"role": role}}
+    )
+    
+    if result.matched_count == 0:
+        raise HTTPException(status_code=404, detail="User not found")
+    
+    return {"message": "Role updated successfully"}
+
+@api_router.post("/farmers/link")
+async def link_farmer_to_user(
+    data: dict,
+    user: dict = Depends(get_current_user)
+):
+    if user["role"] != "admin":
+        raise HTTPException(status_code=403, detail="Admin access required")
+    
+    user_id = data.get("user_id")
+    farmer_id = data.get("farmer_id")
+    
+    if not user_id or not farmer_id:
+        raise HTTPException(status_code=400, detail="user_id and farmer_id required")
+    
+    # Update farmer with user_id
+    farmer_result = await db.farmers.update_one(
+        {"farmer_id": farmer_id},
+        {"$set": {"user_id": user_id}}
+    )
+    
+    if farmer_result.matched_count == 0:
+        raise HTTPException(status_code=404, detail="Farmer not found")
+    
+    # Update user role to farmer
+    await db.users.update_one(
+        {"user_id": user_id},
+        {"$set": {"role": "farmer"}}
+    )
+    
+    return {"message": "Farmer linked to user successfully"}
+
 # ============ Farmer Routes ============
 
 @api_router.post("/farmers", response_model=Farmer)
