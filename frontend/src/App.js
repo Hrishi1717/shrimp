@@ -63,6 +63,12 @@ function AppRouter() {
         </ProtectedRoute>
       } />
       
+      <Route path="/users" element={
+        <ProtectedRoute allowedRoles={['admin']}>
+          <UserManagement />
+        </ProtectedRoute>
+      } />
+      
       <Route path="/batch/:batchId" element={
         <ProtectedRoute allowedRoles={['farmer', 'staff', 'admin']}>
           <BatchDetails />
