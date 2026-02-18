@@ -325,10 +325,48 @@ async def logout(response: Response, user: dict = Depends(get_current_user)):
 
 # ============ User Management Routes ============
 
+@api_router.post("/users/invite")
+async def invite_user(data: dict, user: dict = Depends(get_current_user)):
+    if user["role"] not in ["owner", "admin"]:
+        raise HTTPException(status_code=403, detail="Owner/Admin access required")
+    
+    email = data.get("email")
+    role = data.get("role", "staff")
+    
+    if not email:
+        raise HTTPException(status_code=400, detail="Email required")
+    
+    if role not in ["owner", "admin", "staff", "farmer"]:
+        raise HTTPException(status_code=400, detail="Invalid role")
+    
+    # Check if user already exists
+    existing_user = await db.users.find_one({"email": email}, {"_id": 0})
+    if existing_user:
+        # Update role if user exists
+        await db.users.update_one(
+            {"email": email},
+            {"$set": {"role": role}}
+        )
+        return {"message": "User role updated", "user_id": existing_user["user_id"]}
+    
+    # Create invited user record
+    user_id = f"user_{uuid.uuid4().hex[:12]}"
+    await db.users.insert_one({
+        "user_id": user_id,
+        "email": email,
+        "name": email.split("@")[0],  # Temporary name
+        "picture": None,
+        "role": role,
+        "invited": True,
+        "created_at": datetime.now(timezone.utc)
+    })
+    
+    return {"message": "User invited successfully", "user_id": user_id}
+
 @api_router.get("/users", response_model=List[User])
 async def get_users(user: dict = Depends(get_current_user)):
-    if user["role"] != "admin":
-        raise HTTPException(status_code=403, detail="Admin access required")
+    if user["role"] not in ["owner", "admin"]:
+        raise HTTPException(status_code=403, detail="Owner/Admin access required")
     
     users = await db.users.find({}, {"_id": 0}).to_list(1000)
     
