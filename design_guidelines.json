@@ -1,0 +1,154 @@
+{
+  "brand_identity": {
+    "name": "AquaFlow Systems",
+    "theme_mode": "light",
+    "archetype": "The Performance Pro (Industrial Variant)",
+    "emotional_tone": "Sterile, Efficient, Transparent, Industrial",
+    "visual_metaphor": "The Cold Chain - Frosted glass, stainless steel, and deep ocean depths."
+  },
+  "typography": {
+    "font_imports": [
+      "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    ],
+    "headings": {
+      "family": "Barlow Condensed, sans-serif",
+      "weights": "600, 700",
+      "usage": "All page titles, card headers, and major metrics.",
+      "letter_spacing": "tracking-tight"
+    },
+    "body": {
+      "family": "Inter, sans-serif",
+      "weights": "400, 500",
+      "usage": "Data tables, form labels, general text.",
+      "letter_spacing": "tracking-normal"
+    },
+    "mono": {
+      "family": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+      "usage": "Batch IDs, QR codes, financial figures."
+    }
+  },
+  "colors": {
+    "primary": {
+      "name": "Deep Ocean",
+      "hex": "#0F172A",
+      "tailwind": "slate-900",
+      "usage": "Sidebar, primary buttons, major text."
+    },
+    "secondary": {
+      "name": "Stainless Steel",
+      "hex": "#F1F5F9",
+      "tailwind": "slate-100",
+      "usage": "Page background, secondary buttons."
+    },
+    "accent": {
+      "name": "Safety Orange",
+      "hex": "#F97316",
+      "tailwind": "orange-500",
+      "usage": "Call-to-actions, alerts, processing states."
+    },
+    "background": {
+      "default": "#F8FAFC",
+      "paper": "#FFFFFF",
+      "subtle": "#F1F5F9"
+    },
+    "status": {
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "error": "#EF4444",
+      "info": "#3B82F6",
+      "neutral": "#64748B"
+    },
+    "charts": {
+      "palette": ["#0F172A", "#F97316", "#10B981", "#3B82F6", "#64748B"]
+    }
+  },
+  "layout_system": {
+    "spacing_scale": "Relaxed Industrial",
+    "container_padding": "p-4 md:p-6 lg:p-8",
+    "border_radius": "rounded-lg",
+    "grid_modes": {
+      "farmer_mobile": "grid-cols-1 gap-4",
+      "staff_tablet": "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
+      "admin_desktop": "grid-cols-12 gap-6 (Bento Grid)"
+    }
+  },
+  "components": {
+    "cards": {
+      "style": "bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-200",
+      "padding": "p-6"
+    },
+    "buttons": {
+      "primary": "bg-slate-900 text-white hover:bg-slate-800 shadow-sm",
+      "secondary": "bg-white text-slate-900 border border-slate-200 hover:bg-slate-50",
+      "accent": "bg-orange-500 text-white hover:bg-orange-600 shadow-sm",
+      "ghost": "hover:bg-slate-100 text-slate-600 hover:text-slate-900"
+    },
+    "inputs": {
+      "style": "bg-white border-slate-200 focus:border-slate-900 focus:ring-slate-900"
+    },
+    "badges": {
+      "style": "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+    }
+  },
+  "visual_assets": {
+    "login_background": {
+      "url": "https://images.pexels.com/photos/6872322/pexels-photo-6872322.jpeg",
+      "alt": "Aerial view of aquaculture farm",
+      "category": "background"
+    },
+    "hero_images": [
+      {
+        "url": "https://images.pexels.com/photos/2714384/pexels-photo-2714384.jpeg",
+        "alt": "Fresh prawns on ice",
+        "category": "inventory"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1720036237334-9263cd28c3d4",
+        "alt": "Industrial processing plant interior",
+        "category": "processing"
+      },
+      {
+        "url": "https://images.pexels.com/photos/3338019/pexels-photo-3338019.jpeg",
+        "alt": "Logistics and shipping port",
+        "category": "dispatch"
+      }
+    ],
+    "icons": {
+      "library": "lucide-react",
+      "style": "stroke-1.5"
+    }
+  },
+  "accessibility": {
+    "contrast_ratio": "WCAG AA (4.5:1 for normal text)",
+    "interactive_targets": "Min 44x44px for touch targets (Farmers)",
+    "focus_states": "Visible ring-2 ring-slate-900 ring-offset-2",
+    "aria_labels": "Mandatory for all icon-only buttons"
+  },
+  "motion": {
+    "library": "framer-motion (optional) or tailwindcss-animate",
+    "speed": "fast (200ms)",
+    "easing": "ease-out",
+    "usage": "Subtle hover lifts on cards, slide-in for sidebars, fade-in for data loading."
+  },
+  "universal_guidelines": [
+    "Do NOT use gradients for backgrounds; use solid colors or subtle noise/grain.",
+    "Use 'Barlow Condensed' for all numeric metrics and KPIs to give them weight.",
+    "Ensure all inputs have clear, persistent labels (no floating labels).",
+    "For the Farmer Dashboard: Prioritize large text and high contrast.",
+    "For the Admin Dashboard: Maximize data density but keep whitespace between sections.",
+    "All interactive elements MUST have a data-testid attribute.",
+    "Use 'sonner' for all toast notifications."
+  ],
+  "instructions_to_main_agent": {
+    "setup": [
+      "Add the Google Fonts import to index.css immediately.",
+      "Configure tailwind.config.js to extend the font family with Barlow Condensed.",
+      "Install framer-motion if not present, or use standard CSS transitions."
+    ],
+    "execution": [
+      "Start with the Authentication flow using the Login Background.",
+      "Build the 'App Shell' (Sidebar/Header) adaptable for different roles.",
+      "Implement the Farmer Dashboard first as the mobile-first baseline."
+    ]
+  }
+}
