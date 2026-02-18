@@ -32,13 +32,13 @@ function Layout({ children, user, activePage }) {
   };
 
   const navItems = [
-    { id: 'staff', label: 'Intake', icon: Package, path: '/staff', roles: ['staff', 'admin'] },
-    { id: 'processing', label: 'Processing', icon: Factory, path: '/processing', roles: ['staff', 'admin'] },
-    { id: 'inventory', label: 'Inventory', icon: Warehouse, path: '/inventory', roles: ['staff', 'admin'] },
-    { id: 'dispatch', label: 'Dispatch', icon: Truck, path: '/dispatch', roles: ['staff', 'admin'] },
-    { id: 'scanner', label: 'QR Scanner', icon: QrCode, path: '/scanner', roles: ['staff', 'admin'] },
-    { id: 'admin', label: 'Dashboard', icon: BarChart3, path: '/admin', roles: ['admin'] },
-    { id: 'users', label: 'User Management', icon: Users, path: '/users', roles: ['admin'] },
+    { id: 'staff', label: 'Intake', icon: Package, path: '/staff', roles: ['staff', 'admin', 'owner'] },
+    { id: 'processing', label: 'Processing', icon: Factory, path: '/processing', roles: ['staff', 'admin', 'owner'] },
+    { id: 'inventory', label: 'Inventory', icon: Warehouse, path: '/inventory', roles: ['staff', 'admin', 'owner'] },
+    { id: 'dispatch', label: 'Dispatch', icon: Truck, path: '/dispatch', roles: ['staff', 'admin', 'owner'] },
+    { id: 'scanner', label: 'QR Scanner', icon: QrCode, path: '/scanner', roles: ['staff', 'admin', 'owner'] },
+    { id: 'admin', label: 'Dashboard', icon: BarChart3, path: '/admin', roles: ['admin', 'owner'] },
+    { id: 'users', label: 'User Management', icon: Users, path: '/users', roles: ['admin', 'owner'] },
   ];
 
   const filteredNavItems = navItems.filter(item => item.roles.includes(user?.role));
